@@ -1,0 +1,40 @@
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-input
+        label="Título"
+        labelPlacement="floating"
+        [clearInput]="true">
+      </ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        label="Objetivo General"
+        labelPlacement="floating"
+        style="height: 120px;">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        label="Planteamiento del Problema"
+        labelPlacement="floating"
+        style="height: 100px;">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        label="Justificación"
+        labelPlacement="floating"
+        style="height: 100px;">
+      </ion-textarea>
+    </ion-item>
+    <ion-item>
+      <ion-textarea
+        label="Conclusión"
+        labelPlacement="floating"
+        style="height: 100px;">
+      </ion-textarea>
+    </ion-item>
+    <ion-button expand="block" color="success" [routerLink]="['/Funcion/sesion/view']" routerLinkActive="router-link-active">Ingresar</ion-button>
+  </ion-list>
+</ion-content>
