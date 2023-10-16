@@ -15,6 +15,6 @@ export class AdminPage implements OnInit {
   }
 
   LogOut(){
-    this.Logueo.LogOut;
+    this.Logueo.LogOut();
   }
 }
