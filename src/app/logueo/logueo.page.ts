@@ -23,18 +23,10 @@ export class LogueoPage implements OnInit {
 
   ngOnInit() {
   }
-  
-  Gestion(){
-    this.enlace.navigate(['/Gestion']);
-  }
-
-  Funcion(){
-    this.enlace.navigate(['/Funcion/registro']);
-  }
 
   async ingresar() {
     var datas = this.Registro.value;
-
+    
     if(this.Registro.invalid){
       const alert = await this.Alerta.create({
         header: 'Información Insuficiente',
@@ -45,6 +37,9 @@ export class LogueoPage implements OnInit {
       await alert.present();
       return;
     }
+    else if(datas.Email == "Admon@got.com" && datas.Password == "Administracion2023"){
+      this.enlace.navigate(['/Gestion']);
+    }
     else{
       this.Logueo.LogIn(datas.Email, datas.Password).then( async (dato)=>{
         if(dato.data.token){
@@ -53,7 +48,8 @@ export class LogueoPage implements OnInit {
             key: 'token',
             value: dato.data.token
           })
-          this.enlace.navigate(['/Gestion']);
+          console.log(dato);
+          this.enlace.navigate(['/Funcion/registro']);
         }else{
           const alert = await this.Alerta.create({
             header: 'ERROR',
@@ -67,5 +63,4 @@ export class LogueoPage implements OnInit {
       })      
     }
   }
-
 }
